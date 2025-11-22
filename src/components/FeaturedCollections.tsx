@@ -58,10 +58,11 @@ export default function FeaturedCollections() {
             return (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br ${collection.bgGradient} rounded-3xl p-8 border-2 border-transparent ${collection.hoverColor} transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer`}
+                className={`group relative glass-card rounded-3xl p-8 border-2 ${collection.hoverColor} transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer overflow-hidden`}
               >
+                <div className={`absolute inset-0 bg-gradient-to-br ${collection.bgGradient} opacity-30 -z-10`}></div>
                 <div className="mb-6">
-                  <div className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 glass-card rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border border-white/40`}>
                     <Icon className={`w-8 h-8 ${collection.iconColor}`} strokeWidth={1.5} />
                   </div>
                 </div>

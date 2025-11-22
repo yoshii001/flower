@@ -87,8 +87,8 @@ export default function ProductGallery() {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full font-light transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-rose-500 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-rose-50 border border-gray-200'
+                  ? 'rose-gold-gradient text-white shadow-lg'
+                  : 'glass-card text-gray-700 hover:bg-rose-50 border border-white/30'
               }`}
             >
               {category}
@@ -100,7 +100,7 @@ export default function ProductGallery() {
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group glass-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/30"
             >
               <div className="relative overflow-hidden aspect-square">
                 <img
@@ -110,7 +110,7 @@ export default function ProductGallery() {
                 />
                 <button
                   onClick={() => toggleFavorite(product.id)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-lg"
+                  className="absolute top-4 right-4 w-10 h-10 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg border border-white/30"
                 >
                   <Heart
                     className={`w-5 h-5 ${
@@ -121,7 +121,7 @@ export default function ProductGallery() {
                   />
                 </button>
                 <div className="absolute bottom-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-light text-gray-700">
+                  <span className="glass-card px-3 py-1 rounded-full text-xs font-light text-gray-700 border border-white/30">
                     {product.category}
                   </span>
                 </div>
@@ -136,10 +136,10 @@ export default function ProductGallery() {
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-light text-rose-500">
+                  <span className="text-2xl font-light gold-text">
                     ${product.price}
                   </span>
-                  <button className="bg-rose-500 hover:bg-rose-600 text-white px-6 py-2 rounded-full flex items-center space-x-2 transition-colors duration-300 shadow-md hover:shadow-lg">
+                  <button className="rose-gold-gradient text-white px-6 py-2 rounded-full flex items-center space-x-2 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
                     <ShoppingCart className="w-4 h-4" />
                     <span className="text-sm font-light">Add to Cart</span>
                   </button>
@@ -150,7 +150,7 @@ export default function ProductGallery() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-white hover:bg-gray-50 text-gray-800 px-8 py-4 rounded-full font-light text-lg transition-all duration-300 shadow-md hover:shadow-lg border border-gray-200">
+          <button className="glass-card text-gray-800 px-8 py-4 rounded-full font-light text-lg transition-all duration-300 shadow-md hover:shadow-lg border border-white/30 hover:scale-105">
             View All Products
           </button>
         </div>

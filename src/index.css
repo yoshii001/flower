@@ -47,4 +47,74 @@
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out;
   }
+
+  @keyframes kenBurns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-ken-burns {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 50%, #d4af37 100%);
+    background-size: 200% 200%;
+    animation: goldShimmer 3s ease infinite;
+  }
+
+  @keyframes goldShimmer {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 50%, #d4af37 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: goldShimmer 3s ease infinite;
+  }
+
+  .rose-gold-gradient {
+    background: linear-gradient(135deg, #e0a390 0%, #f4d3c8 50%, #e0a390 100%);
+    background-size: 200% 200%;
+    animation: goldShimmer 3s ease infinite;
+  }
+
+  .vignette {
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.3);
+  }
+
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .flower-petal {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-ken-burns,
+    .gold-gradient,
+    .gold-text,
+    .rose-gold-gradient {
+      animation: none;
+    }
+  }
 }

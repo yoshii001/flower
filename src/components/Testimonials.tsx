@@ -41,7 +41,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative"
+              className="glass-card rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative border border-white/30"
             >
               <Quote className="absolute top-6 right-6 w-12 h-12 text-rose-100" />
 
@@ -66,7 +66,7 @@ export default function Testimonials() {
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-rose-400 text-rose-400"
+                      className="w-5 h-5 fill-amber-400 text-amber-400"
                     />
                   ))}
                 </div>
@@ -79,7 +79,12 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-rose-500 to-pink-500 rounded-3xl p-12 text-center text-white">
+        <div className="mt-16 rose-gold-gradient rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          </div>
+          <div className="relative z-10">
           <h3 className="text-3xl md:text-4xl font-light mb-4">
             Subscribe to Our Newsletter
           </h3>
@@ -92,9 +97,10 @@ export default function Testimonials() {
               placeholder="Enter your email"
               className="flex-1 px-6 py-4 rounded-full text-gray-800 font-light focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="bg-white text-rose-500 px-8 py-4 rounded-full font-light hover:bg-gray-50 transition-colors duration-300 shadow-lg">
+            <button className="bg-white text-rose-600 px-8 py-4 rounded-full font-light hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
               Subscribe
             </button>
+          </div>
           </div>
         </div>
       </div>

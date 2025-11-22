@@ -42,7 +42,7 @@ export default function Story() {
               your special moments are celebrated with the freshest, most beautiful blooms.
               We don't just sell flowers – we craft emotions.
             </p>
-            <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-light text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="rose-gold-gradient text-white px-8 py-4 rounded-full font-light text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
               Learn More About Us
             </button>
           </div>
@@ -66,9 +66,9 @@ export default function Story() {
             return (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl hover:bg-rose-50 transition-all duration-300"
+                className="text-center p-6 rounded-2xl glass-card border border-white/30 hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 glass-card rounded-2xl mb-4 border border-white/40">
                   <Icon className="w-8 h-8 text-rose-500" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-light text-gray-800 mb-3">

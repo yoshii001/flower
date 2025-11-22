@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="fixed w-full glass-card border-b border-white/30 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-2">
@@ -31,9 +31,9 @@ export default function Navbar() {
             <a href="#contact" className="text-gray-700 hover:text-rose-500 transition-colors duration-300 font-light">
               Contact
             </a>
-            <button className="relative p-2 hover:bg-rose-50 rounded-full transition-colors duration-300">
+            <button className="relative p-2 glass-card rounded-full transition-all duration-300 hover:scale-110 border border-white/30">
               <ShoppingCart className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
-              <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 rose-gold-gradient text-white text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-lg">
                 0
               </span>
             </button>
@@ -53,7 +53,7 @@ export default function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="md:hidden glass-card border-t border-white/30">
           <div className="px-4 py-4 space-y-3">
             <a href="#home" className="block py-2 text-gray-700 hover:text-rose-500 transition-colors font-light">
               Home
