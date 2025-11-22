@@ -1,33 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans text-gray-800 bg-cream-50;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
-  .glass-effect {
-    @apply bg-white/70 backdrop-blur-md;
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
   }
 
-  .btn-primary {
-    @apply px-8 py-3 bg-rose-500 text-white rounded-full font-medium
-           hover:bg-rose-600 transition-all duration-300
-           hover:shadow-lg hover:scale-105;
+  .animate-blob {
+    animation: blob 7s infinite;
   }
 
-  .btn-secondary {
-    @apply px-8 py-3 bg-white text-rose-500 rounded-full font-medium
-           border-2 border-rose-500 hover:bg-rose-50 transition-all duration-300
-           hover:shadow-lg hover:scale-105;
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
   }
 }
