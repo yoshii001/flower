@@ -14,6 +14,7 @@ export const BouquetBuilder = ({ onClose }: BouquetBuilderProps) => {
   const [selectedFlower, setSelectedFlower] = useState<PlacedFlower | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [nextZIndex, setNextZIndex] = useState(1);
+  const [draggingFlowerId, setDraggingFlowerId] = useState<string | null>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const { addToCart } = useCart();
 
@@ -43,25 +44,40 @@ export const BouquetBuilder = ({ onClose }: BouquetBuilderProps) => {
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    const flowerId = e.dataTransfer.getData('flowerId');
-    const flowerName = e.dataTransfer.getData('flowerName');
-    const imageUrl = e.dataTransfer.getData('imageUrl');
+    const placedFlowerId = e.dataTransfer.getData('placedFlowerId');
 
-    const newFlower: PlacedFlower = {
-      id: `${flowerId}-${Date.now()}`,
-      flowerId,
-      flowerName,
-      imageUrl,
-      x: Math.max(5, Math.min(95, x)),
-      y: Math.max(5, Math.min(95, y)),
-      scale: 1,
-      rotation: 0,
-      zIndex: nextZIndex,
-    };
+    if (placedFlowerId) {
+      // Repositioning an existing flower
+      setPlacedFlowers(prev =>
+        prev.map(f =>
+          f.id === placedFlowerId
+            ? { ...f, x: Math.max(5, Math.min(95, x)), y: Math.max(5, Math.min(95, y)) }
+            : f
+        )
+      );
+      setDraggingFlowerId(null);
+    } else {
+      // Adding a new flower from gallery
+      const flowerId = e.dataTransfer.getData('flowerId');
+      const flowerName = e.dataTransfer.getData('flowerName');
+      const imageUrl = e.dataTransfer.getData('imageUrl');
 
-    setPlacedFlowers(prev => [...prev, newFlower]);
-    setNextZIndex(prev => prev + 1);
-    setSelectedFlower(newFlower);
+      const newFlower: PlacedFlower = {
+        id: `${flowerId}-${Date.now()}`,
+        flowerId,
+        flowerName,
+        imageUrl,
+        x: Math.max(5, Math.min(95, x)),
+        y: Math.max(5, Math.min(95, y)),
+        scale: 1,
+        rotation: 0,
+        zIndex: nextZIndex,
+      };
+
+      setPlacedFlowers(prev => [...prev, newFlower]);
+      setNextZIndex(prev => prev + 1);
+      setSelectedFlower(newFlower);
+    }
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -70,6 +86,16 @@ export const BouquetBuilder = ({ onClose }: BouquetBuilderProps) => {
 
   const handleFlowerClick = (flower: PlacedFlower) => {
     setSelectedFlower(flower);
+  };
+
+  const handlePlacedFlowerDragStart = (e: React.DragEvent, flower: PlacedFlower) => {
+    e.stopPropagation();
+    e.dataTransfer.setData('placedFlowerId', flower.id);
+    setDraggingFlowerId(flower.id);
+  };
+
+  const handlePlacedFlowerDragEnd = () => {
+    setDraggingFlowerId(null);
   };
 
   const updateSelectedFlower = (updates: Partial<PlacedFlower>) => {
@@ -259,10 +285,13 @@ export const BouquetBuilder = ({ onClose }: BouquetBuilderProps) => {
               {placedFlowers.map(flower => (
                 <div
                   key={flower.id}
+                  draggable
+                  onDragStart={(e) => handlePlacedFlowerDragStart(e, flower)}
+                  onDragEnd={handlePlacedFlowerDragEnd}
                   onClick={() => handleFlowerClick(flower)}
-                  className={`absolute cursor-pointer transition-all ${
+                  className={`absolute cursor-move transition-all ${
                     selectedFlower?.id === flower.id ? 'ring-4 ring-rose-500 ring-offset-2' : ''
-                  }`}
+                  } ${draggingFlowerId === flower.id ? 'opacity-50' : ''}`}
                   style={{
                     left: `${flower.x}%`,
                     top: `${flower.y}%`,
