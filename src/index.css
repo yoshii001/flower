@@ -2,119 +2,300 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+@keyframes petalFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
   }
 }
 
-@layer utilities {
-  @keyframes blob {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
+@keyframes bloom {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
   }
-
-  .animate-blob {
-    animation: blob 7s infinite;
+  60% {
+    transform: scale(1.1) rotate(10deg);
   }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
   }
+}
 
-  .animation-delay-4000 {
-    animation-delay: 4s;
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
   }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  100% {
+    background-position: 1000px 0;
   }
+}
 
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
   }
-
-  @keyframes kenBurns {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
+  33% {
+    transform: translateY(-15px) rotate(2deg);
   }
-
-  .animate-ken-burns {
-    animation: kenBurns 20s ease-in-out infinite alternate;
+  66% {
+    transform: translateY(-8px) rotate(-2deg);
   }
+}
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-
-  .gold-gradient {
-    background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 50%, #d4af37 100%);
-    background-size: 200% 200%;
-    animation: goldShimmer 3s ease infinite;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  @keyframes goldShimmer {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
   }
-
-  .gold-text {
-    background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 50%, #d4af37 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: goldShimmer 3s ease infinite;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
+}
 
-  .rose-gold-gradient {
-    background: linear-gradient(135deg, #e0a390 0%, #f4d3c8 50%, #e0a390 100%);
-    background-size: 200% 200%;
-    animation: goldShimmer 3s ease infinite;
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(251, 113, 133, 0.4),
+                0 0 60px rgba(251, 113, 133, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
   }
-
-  .vignette {
-    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.3);
+  50% {
+    box-shadow: 0 0 50px rgba(251, 113, 133, 0.6),
+                0 0 100px rgba(251, 113, 133, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.2);
   }
+}
 
-  .grain-overlay {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
   }
-
-  .flower-petal {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  50% {
+    background-position: 100% 50%;
   }
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    .animate-ken-burns,
-    .gold-gradient,
-    .gold-text,
-    .rose-gold-gradient {
-      animation: none;
-    }
+@keyframes morphBlob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.petal {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(135deg, #fecdd3, #fb7185);
+  border-radius: 50% 0 50% 0;
+  pointer-events: none;
+  animation: petalFall linear infinite;
+  transition: background 0.5s ease;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.bloom-in {
+  animation: bloom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, #fce7f3, #fbcfe8, #fecdd3, #ffe4e6);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.blob-morph {
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+.glow-card:hover {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.parallax-layer {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fb7185, #ec4899, #f472b6);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-reveal img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-reveal:hover img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+.animate-in {
+  animation: zoomIn 0.4s ease-out;
+}
+
+.fade-in {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.slide-in-from-bottom-4 {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.zoom-on-hover {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.5);
+}
+
+.product-card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card-shadow:hover {
+  box-shadow: 0 20px 60px rgba(251, 113, 133, 0.3), 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

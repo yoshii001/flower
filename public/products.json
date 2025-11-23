@@ -1,0 +1,229 @@
+[
+  {
+    "id": "1",
+    "title": "Red Rose Elegance",
+    "description": "Stunning arrangement of premium red roses, symbolizing deep love and passion. Perfect for romantic occasions.",
+    "priceLKR": 2500,
+    "category": "roses",
+    "badge": "best-seller",
+    "size": "Medium",
+    "bouquetType": "Hand-Tied Bouquet",
+    "scent": "strong",
+    "freshness": "5-7 Days",
+    "images": [
+      "https://i.ibb.co/BKwNMff5/1.jpg",
+      "https://i.ibb.co/2D6F5kk/2.webp",
+      "https://i.ibb.co/Nnp8HKPh/3.webp",
+      "https://i.ibb.co/j95mmSNx/4.webp"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Pink Rose Delight",
+    "description": "Soft pink roses arranged beautifully, expressing grace and admiration. Ideal for celebrating special moments.",
+    "priceLKR": 2200,
+    "category": "roses",
+    "size": "Medium",
+    "bouquetType": "Romantic Bouquet",
+    "scent": "strong",
+    "freshness": "5-7 Days",
+    "images": [
+      "https://i.ibb.co/dwDZkXmM/5.jpg",
+      "https://i.ibb.co/YFjH4HGD/6.webp",
+      "https://i.ibb.co/BKwNMff5/1.jpg",
+      "https://i.ibb.co/2D6F5kk/2.webp"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Elegant White Lilies",
+    "description": "Sophisticated arrangement of pure white lilies. Perfect for weddings, sympathy, or expressing pure devotion.",
+    "priceLKR": 2800,
+    "category": "lilies",
+    "badge": "best-seller",
+    "size": "Large",
+    "bouquetType": "Cascade Arrangement",
+    "scent": "strong",
+    "freshness": "7-10 Days",
+    "images": [
+      "https://i.ibb.co/9SKSDV1/1.jpg",
+      "https://i.ibb.co/mCxYbrwT/2.jpg",
+      "https://i.ibb.co/GvP7HFdz/3.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Vibrant Gerbera Collection",
+    "description": "Cheerful gerbera daisies in bright colors. Brings joy and positive energy to any space.",
+    "priceLKR": 1800,
+    "category": "gerberas",
+    "badge": "just-arrived",
+    "size": "Medium",
+    "bouquetType": "Garden Style Bouquet",
+    "scent": "none",
+    "freshness": "7-10 Days",
+    "images": [
+      "https://i.ibb.co/6cHw80P9/1.webp",
+      "https://i.ibb.co/zhw1FpnR/2.jpg",
+      "https://i.ibb.co/0jSmq629/3.jpg",
+      "https://i.ibb.co/DDVmJtjL/4.webp"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Sunflower Sunshine",
+    "description": "Radiant sunflowers arranged with fresh greenery. Brightens any room and lifts spirits instantly.",
+    "priceLKR": 2200,
+    "category": "sunflowers",
+    "badge": "best-seller",
+    "size": "Large",
+    "bouquetType": "Country Style Bouquet",
+    "scent": "none",
+    "freshness": "7-14 Days",
+    "images": [
+      "https://i.ibb.co/hxBGbGKp/1.webp",
+      "https://i.ibb.co/JjFJ7Tn6/2.webp",
+      "https://i.ibb.co/svng4SZ6/3.webp",
+      "https://i.ibb.co/84PXzCGG/4.webp"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Exotic Orchid Arrangement",
+    "description": "Stunning exotic orchids in elegant presentation. A gift of sophistication and rare beauty.",
+    "priceLKR": 3500,
+    "category": "orchids",
+    "badge": "limited",
+    "size": "Medium",
+    "bouquetType": "Luxury Arrangement",
+    "scent": "mild",
+    "freshness": "10-14 Days",
+    "images": [
+      "https://i.ibb.co/67T4GV1Q/1.jpg",
+      "https://i.ibb.co/7NKdRXvP/2.webp",
+      "https://i.ibb.co/6cMzpDJW/3.jpg",
+      "https://i.ibb.co/rBMSGhD/4.jpg"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Classic Carnation Bundle",
+    "description": "Charming carnations in beautiful colors, symbolizing love and fascination. Long-lasting and affordable elegance.",
+    "priceLKR": 1500,
+    "category": "carnations",
+    "size": "Small",
+    "bouquetType": "Hand-Tied Bundle",
+    "scent": "mild",
+    "freshness": "7-10 Days",
+    "images": [
+      "https://i.ibb.co/twcstbCD/1.webp",
+      "https://i.ibb.co/0j3KNWnC/2.webp",
+      "https://i.ibb.co/YT4CzCBW/3.webp",
+      "https://i.ibb.co/sdjSJ4G5/4.webp"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Colorful Tulip Collection",
+    "description": "Fresh tulips in vibrant colors, representing perfect love. A classic spring favorite that brightens any day.",
+    "priceLKR": 2400,
+    "category": "tulips",
+    "badge": "just-arrived",
+    "size": "Medium",
+    "bouquetType": "Spring Bouquet",
+    "scent": "none",
+    "freshness": "5-7 Days",
+    "images": [
+      "https://i.ibb.co/rRFrBwfX/1.webp",
+      "https://i.ibb.co/fzWbWZ74/2.jpg",
+      "https://i.ibb.co/mCLz2N6z/2.webp",
+      "https://i.ibb.co/v4qtMYRZ/3.webp"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Alstroemeria Bouquet",
+    "description": "Delicate alstroemeria flowers representing friendship and devotion. Long-lasting beauty with intricate petals.",
+    "priceLKR": 1900,
+    "category": "alstroemeria",
+    "size": "Medium",
+    "bouquetType": "Garden Style Arrangement",
+    "scent": "none",
+    "freshness": "7-14 Days",
+    "images": [
+      "https://i.ibb.co/8CvrdWY/1.webp",
+      "https://i.ibb.co/Pvb1PWnB/2.webp",
+      "https://i.ibb.co/JwFjJctc/3.webp",
+      "https://i.ibb.co/84dTQ6rn/4.jpg"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Chrysanthemum Garden",
+    "description": "Beautiful chrysanthemums in various colors, symbolizing joy and optimism. Perfect for autumn celebrations.",
+    "priceLKR": 1700,
+    "category": "chrysanthemums",
+    "size": "Large",
+    "bouquetType": "Garden Style Arrangement",
+    "scent": "mild",
+    "freshness": "7-14 Days",
+    "images": [
+      "https://i.ibb.co/ZR2Z3q2x/1.webp",
+      "https://i.ibb.co/mrWRmKMd/2.webp",
+      "https://i.ibb.co/Gf512wW1/3.webp",
+      "https://i.ibb.co/27v2jnsb/4.jpg"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Fragrant Jasmine Blossoms",
+    "description": "Delicate white jasmine flowers with an intoxicating scent. Perfect for creating a romantic and peaceful ambiance.",
+    "priceLKR": 1400,
+    "category": "jasmine",
+    "size": "Small",
+    "bouquetType": "Fragrant Bundle",
+    "scent": "strong",
+    "freshness": "3-5 Days",
+    "images": [
+      "https://i.ibb.co/s9ghg4GT/1.webp",
+      "https://i.ibb.co/8g6Dpz98/2.webp",
+      "https://i.ibb.co/nsV2mpHw/3.jpg"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Lush Peony Paradise",
+    "description": "Luxurious peonies in soft romantic hues. Represents prosperity, happiness, and a beautiful marriage.",
+    "priceLKR": 3200,
+    "category": "peonies",
+    "badge": "limited",
+    "size": "Large",
+    "bouquetType": "Luxury Romance Bouquet",
+    "scent": "strong",
+    "freshness": "5-7 Days",
+    "images": [
+      "https://i.ibb.co/jk5mD50x/1.webp",
+      "https://i.ibb.co/NnJHFzKx/2.webp",
+      "https://i.ibb.co/RpHv4fsP/3.webp",
+      "https://i.ibb.co/YBb2B7Y7/4.webp"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Tulip Quatro Mix",
+    "description": "Four stunning tulip colors blended perfectly. Each color tells a different story of love and beauty.",
+    "priceLKR": 2600,
+    "category": "tulips",
+    "badge": "best-seller",
+    "size": "Large",
+    "bouquetType": "Rainbow Bouquet",
+    "scent": "none",
+    "freshness": "5-7 Days",
+    "images": [
+      "https://i.ibb.co/qL0GJK9j/4.webp",
+      "https://i.ibb.co/rRFrBwfX/1.webp",
+      "https://i.ibb.co/fzWbWZ74/2.jpg",
+      "https://i.ibb.co/v4qtMYRZ/3.webp"
+    ]
+  }
+]

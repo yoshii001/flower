@@ -1,0 +1,81 @@
+import { FlowerType } from '../types';
+
+export const flowerTypes: FlowerType[] = [
+  {
+    id: 'alstroemeria',
+    name: 'Alstroemeria',
+    category: 'alstroemeria',
+    imageUrl: 'https://i.ibb.co/XGQKVFK/1-removebg-preview.png',
+    priceLKR: 300,
+  },
+  {
+    id: 'carnations',
+    name: 'Carnations',
+    category: 'carnations',
+    imageUrl: 'https://i.ibb.co/7d0SgkSL/1-removebg-preview-1.png',
+    priceLKR: 250,
+  },
+  {
+    id: 'chrysanthemums',
+    name: 'Chrysanthemums',
+    category: 'chrysanthemums',
+    imageUrl: 'https://i.ibb.co/sJX7YXdf/1-removebg-preview-2.png',
+    priceLKR: 280,
+  },
+  {
+    id: 'gerberas',
+    name: 'Gerberas',
+    category: 'gerberas',
+    imageUrl: 'https://i.ibb.co/wFCbKcCf/1-removebg-preview-3.png',
+    priceLKR: 320,
+  },
+  {
+    id: 'jasmine',
+    name: 'Jasmine',
+    category: 'jasmine',
+    imageUrl: 'https://i.ibb.co/zhqY40rT/1-removebg-preview-4.png',
+    priceLKR: 200,
+  },
+  {
+    id: 'lilies',
+    name: 'Lilies',
+    category: 'lilies',
+    imageUrl: 'https://i.ibb.co/20NC2vXm/1-removebg-preview-5.png',
+    priceLKR: 400,
+  },
+  {
+    id: 'orchids',
+    name: 'Orchids',
+    category: 'orchids',
+    imageUrl: 'https://i.ibb.co/r2Q8pYsL/1-removebg-preview-6.png',
+    priceLKR: 500,
+  },
+  {
+    id: 'peonies',
+    name: 'Peonies',
+    category: 'peonies',
+    imageUrl: 'https://i.ibb.co/D3t0qYJ/1-removebg-preview-7.png',
+    priceLKR: 450,
+  },
+  {
+    id: 'roses',
+    name: 'Roses',
+    category: 'roses',
+    imageUrl: 'https://i.ibb.co/PGh2Zq46/1-removebg-preview-8.png',
+    priceLKR: 350,
+  },
+  {
+    id: 'sunflowers',
+    name: 'Sunflowers',
+    category: 'sunflowers',
+    imageUrl: 'https://i.ibb.co/23STq3SL/1-removebg-preview-9.png',
+    priceLKR: 330,
+  },
+  {
+    id: 'tulips',
+    name: 'Tulips',
+    category: 'tulips',
+    imageUrl: 'https://i.ibb.co/C5PcgmGB/1-removebg-preview-10.png',
+    priceLKR: 380,
+  },
+];
